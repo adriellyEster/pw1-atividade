@@ -46,7 +46,7 @@ router.post("/technologies", checkExistsUserAccount, (req, res) => {
   const user = req.user;
   const userTecnology = req.body;
   const userTec = addTecnologyUser(user.id, userTecnology);
-  return res.json({ user: userTec });
+  return res.status(201).json({ user: userTec });
 });
 router.put("/technologies/:id", checkExistsUserAccount, (req, res) => {
   const user = req.user;
